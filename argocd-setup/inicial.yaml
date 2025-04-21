@@ -1,20 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus
+  name: demo-full-stack
   namespace: argocd
 spec:
   project: demo-project
   source:
-    repoURL: https://github.com/lautaro887/k8s-prometheus-grafana-argocd-demo.git 
+    repoURL: https://github.com/lautaro887/k8s-prometheus-grafana-argocd-demo.git
     targetRevision: HEAD
-    path: monitoring/prometheus
+    path: argocd-setup
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-    - CreateNamespace=true

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: demo-project
   source:
-    repoURL: https://github.com/tu-usuario/k8s-prometheus-grafana-argocd-demo.git  # Reemplazar con tu repositorio
+    repoURL: https://github.com/lautaro887/k8s-prometheus-grafana-argocd-demo.git  
     targetRevision: HEAD
     path: apps/demo-app
   destination:
