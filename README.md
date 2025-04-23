@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Demo: ArgoCD con Prometheus, Grafana y Nginx en Kubernetes
 
 Este repositorio contiene una demostración completa de cómo desplegar una infraestructura básica con ArgoCD, incluyendo:
@@ -24,44 +23,44 @@ Todo el despliegue está automatizado y preparado para funcionar en **Minikube**
 
 1. Clonar este repositorio:
 
-```bash
-git clone https://github.com/tu-usuario/k8s-prometheus-grafana-argocd-demo.git
-cd k8s-prometheus-grafana-argocd-demo
-```
+   ```bash
+   git clone https://github.com/tu-usuario/k8s-prometheus-grafana-argocd-demo.git
+   cd k8s-prometheus-grafana-argocd-demo
+   ```
 
 2. Ejecutar el script de instalación de ArgoCD:
 
-```bash
-./instalacion-argocd.sh
-```
+   ```bash
+   ./instalacion-argocd.sh
+   ```
 
-Este script:
-- Crea el namespace `argocd`
-- Aplica los manifiestos oficiales de instalación
-- Espera a que todos los pods estén listos
-- Extrae y muestra las credenciales de acceso (usuario y contraseña)
+   Este script:
+   - Crea el namespace `argocd`
+   - Aplica los manifiestos oficiales de instalación
+   - Espera a que todos los pods estén listos
+   - Extrae y muestra las credenciales de acceso (usuario y contraseña)
 
 ---
 
 ## 🌐 Acceso a la UI de ArgoCD
 
-```bash
-kubectl port-forward svc/argocd-server -n argocd 8080:443
-```
+1. Ejecutar el siguiente comando para exponer el servicio:
 
-Luego abrí en tu navegador: [https://localhost:8080](https://localhost:8080)
+   ```bash
+   kubectl port-forward svc/argocd-server -n argocd 8080:443
+   ```
 
-**Credenciales:**
-- Usuario: `admin`
-- Contraseña: (se muestra al finalizar el script de instalación)
+2. Abrir en tu navegador: [https://localhost:8080](https://localhost:8080)
+
+   **Credenciales:**
+   - Usuario: `admin`
+   - Contraseña: (se muestra al finalizar el script de instalación)
 
 ---
 
 ## 🚀 Desplegar la demo desde la UI de ArgoCD
 
-Una vez dentro de la interfaz web de ArgoCD:
-
-1. Hacé clic en **"NEW APP"**
+1. Una vez dentro de la interfaz web de ArgoCD, hacé clic en **"NEW APP"**.
 2. Completá los campos con:
 
    - **Application Name:** `demo`
@@ -71,8 +70,8 @@ Una vez dentro de la interfaz web de ArgoCD:
    - **Path:** `argocd-setup/apps`
    - **Sync Policy:** Manual o Automática (a elección)
 
-3. Hacé clic en **"Create"**
-4. Luego presioná **"SYNC"** para iniciar el despliegue de toda la infraestructura de la demo (Nginx, Prometheus y Grafana)
+3. Hacé clic en **"Create"**.
+4. Luego presioná **"SYNC"** para iniciar el despliegue de toda la infraestructura de la demo (Nginx, Prometheus y Grafana).
 
 ---
 
