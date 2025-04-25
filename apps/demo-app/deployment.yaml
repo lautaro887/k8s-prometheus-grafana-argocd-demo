@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: lautaro887/docker-web-test:v1
         ports:
         - containerPort: 80
         volumeMounts:
